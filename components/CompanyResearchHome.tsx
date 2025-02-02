@@ -741,14 +741,14 @@ export default function CompanyResearcher() {
     e.preventDefault();
 
     if (!companyUrl) {
-      setErrors({ form: "Please enter a company URL" });
+      setErrors({ form: "請輸入公司網址" });
       return;
     }
 
     const domainName = extractDomain(companyUrl);
     
     if (!domainName) {
-      setErrors({ form: "Please enter a valid company URL ('example.com')" });
+      setErrors({ form: "請輸入有效的公司網址（'example.com'）" });
       return;
     }
 
@@ -859,19 +859,19 @@ export default function CompanyResearcher() {
   return (
     <div className="w-full max-w-5xl p-6 z-10 mb-20 mt-6">
       <h1 className="md:text-6xl text-4xl pb-5 font-medium opacity-0 animate-fade-up [animation-delay:200ms]">
-        <span className="text-brand-default"> Company </span>
-        Researcher
+        <span className="text-brand-default">公司</span>
+        研究工具
       </h1>
 
       <p className="text-black mb-12 opacity-0 animate-fade-up [animation-delay:400ms]">
-        Enter a company URL for detailed research info. Instantly know any company inside out.
+        輸入公司網址以獲取詳細的研究資訊。立即深入了解任何公司。
       </p>
 
       <form onSubmit={handleResearch} className="space-y-6 mb-20">
         <input
           value={companyUrl}
           onChange={(e) => setCompanyUrl(e.target.value)}
-          placeholder="Enter Company URL (e.g., example.com)"
+          placeholder="輸入公司網址（例如：example.com）"
           className="w-full bg-white p-3 border box-border outline-none rounded-sm ring-2 ring-brand-default resize-none opacity-0 animate-fade-up [animation-delay:600ms]"
         />
         <button
@@ -881,7 +881,7 @@ export default function CompanyResearcher() {
           } transition-colors`}
           disabled={isGenerating}
         >
-          {isGenerating ? 'Researching...' : 'Research Now'}
+          {isGenerating ? '研究中...' : '開始研究'}
         </button>
 
         <div className="flex items-center justify-end gap-2 sm:gap-3 pt-4 opacity-0 animate-fade-up [animation-delay:1000ms]">
@@ -911,7 +911,7 @@ export default function CompanyResearcher() {
           fundingData || crunchbaseData || pitchbookData || tracxnData || 
           wikipediaData) && (
             <div className="flex items-center">
-              <h2 className="text-4xl font-medium">Company Overview</h2>
+              <h2 className="text-4xl font-medium">公司概覽</h2>
             </div>
             )}
 
@@ -1007,7 +1007,7 @@ export default function CompanyResearcher() {
           {(twitterProfileText || youtubeVideos || tiktokData || 
           redditPosts || githubUrl) && (
             <div className="flex items-center">
-              <h2 className="text-4xl font-medium">Company Socials</h2>
+              <h2 className="text-4xl font-medium">公司社群</h2>
             </div>
             )}
 
@@ -1058,7 +1058,7 @@ export default function CompanyResearcher() {
         {(isGenerating || companySummary) && (
               <div className="space-y-8">
                 <div className="flex items-center">
-                  <h2 className="text-3xl font-medium mt-6">Summary and Mind Map</h2>
+                  <h2 className="text-3xl font-medium mt-6">摘要與思維導圖</h2>
                 </div>
 
                 {isGenerating && companySummary === null ? (
@@ -1072,7 +1072,7 @@ export default function CompanyResearcher() {
                 {isGenerating && companyMap === null ? (
                   <div className="hidden sm:block animate-pulse">
                     <div className="h-64 bg-secondary-darkest rounded-lg flex items-center justify-center">
-                      <p className="text-gray-400 text-md">Loading...</p>
+                      <p className="text-gray-400 text-md">載入中...</p>
                     </div>
                   </div>
                 ) : companyMap && (
@@ -1093,7 +1093,7 @@ export default function CompanyResearcher() {
               rel="origin"
               className="text-gray-600 hover:underline cursor-pointer text-center"
             >
-              Clone this open source project here
+              在此複製此開源專案
             </Link>
             <span className="text-gray-400 hidden sm:inline">|</span>
             <Link 
@@ -1103,7 +1103,7 @@ export default function CompanyResearcher() {
                 className="hover:opacity-80 transition-opacity hidden sm:inline"
               >
             <div className="flex items-center gap-2">
-              <span className="text-gray-600 hover:text-gray-600 hover:underline">Powered by</span>
+              <span className="text-gray-600 hover:text-gray-600 hover:underline">技術支援</span>
                 <img src="/exa_logo.png" alt="Exa Logo" className="h-5 object-contain" />
             </div>
             </Link>

@@ -92,83 +92,81 @@ export default function LinkedInDisplay({ data }: { data: LinkedInData }) {
           <div className="w-20 h-20 md:w-24 md:h-24 relative flex-shrink-0 mx-0">
             <Image
               src={processedData.logo}
-              alt={`${processedData.name} logo`}
+              alt={`${processedData.name} 標誌`}
               fill
               className="object-contain"
             />
           </div>
         )}
-        <div className="text-left">
-          <h2 className="text-2xl font-bold mb-4">{processedData.name}</h2>
-            <p className="text-lg text-gray-800 leading-relaxed line-clamp-6">
-              {processedData.description}
-            </p>
+
+        <div className="flex-1">
+          <h1 className="text-2xl font-medium mb-2">{processedData.name}</h1>
+          <p className="text-gray-600 mb-4 line-clamp-3">{processedData.description}</p>
+
+          <div className="flex flex-wrap gap-4">
+            {processedData.followers && (
+              <div className="flex items-center gap-2">
+                <Users2 className="w-4 h-4 text-gray-500" />
+                <span className="text-sm text-gray-600">{processedData.followers} 位追蹤者</span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {processedData.companySize && (
-            <InfoItem
-            icon={<Users2 className="w-5 h-5" />}
-            label="Company Size"
-            value={processedData.companySize}
-            />
-        )}
-        {processedData.headquarters && (
-            <InfoItem
-            icon={<MapPin className="w-5 h-5" />}
-            label="Headquarters"
-            value={processedData.headquarters}
-            />
-        )}
-        {processedData.followers && (
-          <InfoItem
-            icon={<UserCircle2 className="w-5 h-5" />}
-            label="LinkedIn Followers"
-            value={`${processedData.followers} followers`}
-          />
-        )}
         {processedData.industry && (
-            <InfoItem
-            icon={<Globe className="w-5 h-5" />}
-            label="Industry"
-            value={processedData.industry}
-            maxLines={2}
-            />
+          <div className="flex items-start gap-3">
+            <Building2 className="w-5 h-5 text-gray-500 mt-0.5" />
+            <div>
+              <div className="text-sm font-medium text-gray-900">產業</div>
+              <div className="text-gray-600">{processedData.industry}</div>
+            </div>
+          </div>
         )}
+
+        {processedData.companySize && (
+          <div className="flex items-start gap-3">
+            <Users className="w-5 h-5 text-gray-500 mt-0.5" />
+            <div>
+              <div className="text-sm font-medium text-gray-900">公司規模</div>
+              <div className="text-gray-600">{processedData.companySize}</div>
+            </div>
+          </div>
+        )}
+
+        {processedData.headquarters && (
+          <div className="flex items-start gap-3">
+            <MapPin className="w-5 h-5 text-gray-500 mt-0.5" />
+            <div>
+              <div className="text-sm font-medium text-gray-900">總部</div>
+              <div className="text-gray-600">{processedData.headquarters}</div>
+            </div>
+          </div>
+        )}
+
         {processedData.type && (
-            <InfoItem
-            icon={<Building2 className="w-5 h-5" />}
-            label="Company Type"
-            value={processedData.type}
-            maxLines={2}
-            />
-        )}
-        {processedData.linkedinUrl && (
-            <InfoItem
-            icon={<LinkIcon className="w-5 h-5" />}
-            label="Profile Link"
-            value={processedData.linkedinUrl}
-            isLink
-            />
+          <div className="flex items-start gap-3">
+            <UserCircle2 className="w-5 h-5 text-gray-500 mt-0.5" />
+            <div>
+              <div className="text-sm font-medium text-gray-900">公司類型</div>
+              <div className="text-gray-600">{processedData.type}</div>
+            </div>
+          </div>
         )}
       </div>
 
-      {processedData.specialties.length > 0 && (
-        <div className="mt-8">
-
-          <div className="flex flex-wrap gap-2">
-            {processedData.specialties.map((specialty, index) => (
-              <span
-                key={index}
-                className="bg-blue-50 text-blue-700 rounded-full px-3 py-1 text-sm"
-              >
-                {specialty}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
+      <div className="mt-6 pt-6 border-t">
+        <a
+          href={processedData.linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
+        >
+          <LinkIcon className="w-4 h-4" />
+          <span>在 LinkedIn 上查看完整資料</span>
+        </a>
+      </div>
     </div>
   );
 }

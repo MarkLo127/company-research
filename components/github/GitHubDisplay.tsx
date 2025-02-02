@@ -127,7 +127,7 @@ export default function GitHubDisplay({ githubUrl }: GitHubDisplayProps) {
     <div className="bg-white rounded-lg shadow-lg p-6 transition-all hover:shadow-xl">
       <div className="flex items-center gap-2 text-gray-800 mb-6">
         <FaGithub className="text-2xl" />
-        <h3 className="text-xl font-semibold">GitHub</h3>
+        <h3 className="text-xl font-semibold">GitHub 資訊</h3>
       </div>
 
       {/* Profile Header */}
@@ -155,7 +155,7 @@ export default function GitHubDisplay({ githubUrl }: GitHubDisplayProps) {
             <div className="flex items-center gap-4">
               <span className="flex items-center gap-1">
                 <FaUsers/>
-                <strong>{profile.followers}</strong> followers
+                <strong>{profile.followers}</strong> 位追蹤者
               </span>
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function GitHubDisplay({ githubUrl }: GitHubDisplayProps) {
             rel="noopener noreferrer"
             className="inline-block bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors text-sm"
           >
-            View Full Github Profile
+            查看完整 GitHub 檔案
           </a>
         </div>
       </div>
@@ -173,7 +173,7 @@ export default function GitHubDisplay({ githubUrl }: GitHubDisplayProps) {
       {/* Repositories Section */}
       <div>
         <p className="text-md font-semibold mb-4 flex items-center gap-2">
-          Popular Repositories
+          熱門儲存庫
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {profile.repositories?.map((repo: any) => (
@@ -193,7 +193,7 @@ export default function GitHubDisplay({ githubUrl }: GitHubDisplayProps) {
                 </span>
               </div>
               <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                {repo.description || 'No description provided'}
+                {repo.description || '尚無描述'}
               </p>
               <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600">
                 {repo.language && (
@@ -227,4 +227,4 @@ export default function GitHubDisplay({ githubUrl }: GitHubDisplayProps) {
     </div>
     </div>
   );
-} 
+}

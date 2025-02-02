@@ -64,11 +64,11 @@ export default function RecentTweetsDisplay({ tweets }: RecentTweetsDisplayProps
             </>
           ) : (
             <>
-              Show full tweets <ChevronDown className="w-4 h-4" />
+              展開完整推文 <ChevronDown className="w-4 h-4" />
             </>
           )}
         </button>
       </div>
     </div>
   );
-} 
+}

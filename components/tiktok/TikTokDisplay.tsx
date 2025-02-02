@@ -37,7 +37,7 @@ export default function TikTokDisplay({ data }: TikTokDisplayProps) {
             </div>
 
             <div className="flex flex-col">
-              <span className="text-sm text-gray-500">TikTok Profile</span>
+              <span className="text-sm text-gray-500">TikTok 帳號</span>
               <span className="text-xl transition-colors">
                 @{username}
               </span>

@@ -98,51 +98,39 @@ export default function ProfileDisplay({ rawText, username }: ProfileDisplayProp
           <p className="mt-4 text-gray-800 leading-relaxed">{bio}</p>
         )}
 
-        {/* Stats Grid */}
-        <div className="mt-4 flex flex-wrap gap-6">
+        {/* Stats */}
+        <div className="mt-4 flex flex-wrap gap-6 text-sm text-gray-600">
           {followers_count && (
-            <div className="flex items-center gap-1.5 text-gray-700">
+            <div className="flex items-center gap-2">
               <Users className="w-4 h-4" />
-              <span className="font-medium">{formatNumber(followers_count)}</span>
-              <span className="text-gray-500">Followers</span>
+              <span><strong>{formatNumber(followers_count)}</strong> 位追蹤者</span>
             </div>
           )}
+
           {friends_count && (
-            <div className="flex items-center gap-1.5 text-gray-700">
+            <div className="flex items-center gap-2">
               <UserPlus className="w-4 h-4" />
-              <span className="font-medium">{formatNumber(friends_count)}</span>
-              <span className="text-gray-500">Following</span>
+              <span><strong>{formatNumber(friends_count)}</strong> 位追蹤中</span>
             </div>
           )}
+
           {statuses_count && (
-            <div className="flex items-center gap-1.5 text-gray-700">
+            <div className="flex items-center gap-2">
               <TwitterIcon className="w-4 h-4" />
-              <span className="font-medium">{formatNumber(statuses_count)}</span>
-              <span className="text-gray-500">Tweets</span>
+              <span><strong>{formatNumber(statuses_count)}</strong> 則推文</span>
             </div>
           )}
+
           {created_at && (
-          <div className="flex items-center gap-1.5 text-gray-700">
-            <Calendar className="w-4 h-4" />
-            <span className="text-gray-500">Joined <span className="text-gray-700">{created_at}</span> </span>
-          </div>
+            <div className="flex items-center gap-2">
+              <Calendar className="w-4 h-4" />
+              <span>{created_at} 年加入</span>
+            </div>
           )}
         </div>
 
-        {/* X Profile Link */}
-        {username && (
-          <div className="flex justify-start mt-4 mb-4">
-            <a
-              href={`https://x.com/${username}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-1.5 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-50 transition-colors"
-            >
-              View on X / Twitter
-            </a>
-          </div>
-        )}
-
+        {/* Bottom Padding */}
+        <div className="h-6"></div>
       </div>
     </div>
   );

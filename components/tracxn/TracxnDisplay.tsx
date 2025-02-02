@@ -26,7 +26,7 @@ export default function TracxnDisplay({ data }: TracxnDisplayProps) {
             <div className="w-12 h-12 flex items-center justify-center">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMnv4-Pp4T35SPVgb1FUWBN2qmAgiWCELfFQ&s"
-                alt="Tracxn Logo"
+                alt="Tracxn 標誌"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -36,7 +36,7 @@ export default function TracxnDisplay({ data }: TracxnDisplayProps) {
                 {orgName}
               </span>
               <span className="text-sm text-gray-500">
-                on Tracxn
+                於 Tracxn
               </span>
             </div>
           </div>
@@ -44,4 +44,4 @@ export default function TracxnDisplay({ data }: TracxnDisplayProps) {
       </a>
     </div>
   );
-} 
+}
