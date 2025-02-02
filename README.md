@@ -1,7 +1,7 @@
 # 🔎 公司研究工具
 ### 由 [Exa.ai](https://exa.ai) 驅動 - AI 應用程式專用的搜尋引擎
 
-![截圖](https://companyresearcher.exa.ai/opengraph-image.jpg)
+![截圖](https://github.com/MarkLo127/company-research/blob/main/app/opengraph-image.jpg)
 
 <br>
 
