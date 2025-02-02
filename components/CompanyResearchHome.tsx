@@ -193,7 +193,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('LinkedIn research failed');
+        throw new Error('LinkedIn 研究失敗');
       }
 
       const data = await response.json();
@@ -216,7 +216,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch main website data');
+        throw new Error('無法獲取主網站資料');
       }
 
       const data = await response.json();
@@ -240,7 +240,7 @@ export default function CompanyResearcher() {
       });
 
       if (!subpagesResponse.ok) {
-        throw new Error('Failed to fetch subpages data');
+        throw new Error('無法獲取子頁面資料');
       }
 
       const subpagesData = await subpagesResponse.json();
@@ -271,7 +271,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch competitors');
+        throw new Error('無法獲取競爭對手資料');
       }
 
       const data = await response.json();
@@ -298,7 +298,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('News research failed');
+        throw new Error('新聞研究失敗');
       }
 
       const data = await response.json();
@@ -325,14 +325,14 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch company summary');
+        throw new Error('無法獲取公司摘要');
       }
 
       const data = await response.json();
       setCompanySummary(data.result);
     } catch (error) {
       console.error('Error fetching company summary:', error);
-      setErrors(prev => ({ ...prev, summary: error instanceof Error ? error.message : 'An error occurred with company summary' }));
+      setErrors(prev => ({ ...prev, summary: error instanceof Error ? error.message : '公司摘要發生錯誤' }));
     }
   };
 
@@ -351,14 +351,14 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch company map');
+        throw new Error('無法獲取公司地圖');
       }
 
       const data = await response.json();
       setCompanyMap(data.result);
     } catch (error) {
       console.error('Error fetching company map:', error);
-      setErrors(prev => ({ ...prev, map: error instanceof Error ? error.message : 'An error occurred with company map' }));
+      setErrors(prev => ({ ...prev, map: error instanceof Error ? error.message : '公司地圖發生錯誤' }));
     }
   };
 
@@ -374,7 +374,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch recent tweets');
+        throw new Error('無法獲取最近推文');
       }
 
       const data = await response.json();
@@ -397,7 +397,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch Twitter profile');
+        throw new Error('無法獲取 Twitter 個人資料');
       }
 
       const data = await response.json();
@@ -432,7 +432,7 @@ export default function CompanyResearcher() {
       });
   
       if (!response.ok) {
-        throw new Error('Failed to fetch YouTube videos');
+        throw new Error('無法獲取 YouTube 影片');
       }
   
       const data = await response.json();
@@ -455,7 +455,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch Reddit posts');
+        throw new Error('無法獲取 Reddit 貼文');
       }
 
       const data = await response.json();
@@ -478,7 +478,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch GitHub URL');
+        throw new Error('無法獲取 GitHub 網址');
       }
 
       const data = await response.json();
@@ -504,7 +504,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch funding data');
+        throw new Error('無法獲取募資資料');
       }
 
       const data = await response.json();
@@ -530,7 +530,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch financial report');
+        throw new Error('無法獲取財務報告');
       }
 
       const data = await response.json();
@@ -553,7 +553,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch TikTok profile');
+        throw new Error('無法獲取 TikTok 個人資料');
       }
 
       const data = await response.json();
@@ -579,7 +579,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch Wikipedia data');
+        throw new Error('無法獲取維基百科資料');
       }
 
       const data = await response.json();
@@ -608,7 +608,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch Crunchbase data');
+        throw new Error('無法獲取 Crunchbase 資料');
       }
 
       const data = await response.json();
@@ -634,7 +634,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch PitchBook data');
+        throw new Error('無法獲取 PitchBook 資料');
       }
 
       const data = await response.json();
@@ -660,7 +660,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch Tracxn data');
+        throw new Error('無法獲取創辦人資料');
       }
 
       const data = await response.json();
@@ -686,7 +686,7 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch founders');
+        throw new Error('無法獲取 founders');
       }
 
       const data = await response.json();
@@ -784,70 +784,70 @@ export default function CompanyResearcher() {
           if (mainPageData && mainPageData[0]?.summary) {
             await Promise.all([
               fetchCompanyDetails(mainPageData, domainName)
-                .catch((error) => setErrors(prev => ({ ...prev, companyDetails: error instanceof Error ? error.message : 'An error occurred with company details' }))),
+                .catch((error) => setErrors(prev => ({ ...prev, companyDetails: error instanceof Error ? error.message : '公司詳細資料發生錯誤' }))),
               fetchCompetitors(mainPageData[0].summary, domainName)
                 .then((data) => setCompetitors(data))
-                .catch((error) => setErrors(prev => ({ ...prev, competitors: error instanceof Error ? error.message : 'An error occurred with competitors' })))
+                .catch((error) => setErrors(prev => ({ ...prev, competitors: error instanceof Error ? error.message : '競爭對手資料發生錯誤' })))
             ]);
           }
-        })().catch((error) => setErrors(prev => ({ ...prev, websiteData: error instanceof Error ? error.message : 'An error occurred with website data' }))),
+        })().catch((error) => setErrors(prev => ({ ...prev, websiteData: error instanceof Error ? error.message : '網站資料發生錯誤' }))),
 
         // Independent API calls that don't need main page data
         fetchLinkedInData(domainName)
           .then((data) => setLinkedinData(data))
-          .catch((error) => setErrors(prev => ({ ...prev, linkedin: error instanceof Error ? error.message : 'An error occurred with LinkedIn' }))),
+          .catch((error) => setErrors(prev => ({ ...prev, linkedin: error instanceof Error ? error.message : 'LinkedIn 發生錯誤' }))),
 
         fetchNews(domainName)
           .then((data) => setNews(data))
-          .catch((error) => setErrors(prev => ({ ...prev, news: error instanceof Error ? error.message : 'An error occurred with news' }))),
+          .catch((error) => setErrors(prev => ({ ...prev, news: error instanceof Error ? error.message : '新聞發生錯誤' }))),
 
         fetchTwitterProfile(domainName)
           .then((data) => setTwitterProfileText(data))
-          .catch((error) => setErrors(prev => ({ ...prev, twitter: error instanceof Error ? error.message : 'An error occurred with Twitter profile' }))),
+          .catch((error) => setErrors(prev => ({ ...prev, twitter: error instanceof Error ? error.message : 'Twitter 個人資料發生錯誤' }))),
 
         fetchYoutubeVideos(domainName)
           .then((data) => setYoutubeVideos(data))
-          .catch((error) => setErrors(prev => ({ ...prev, youtube: error instanceof Error ? error.message : 'An error occurred with YouTube videos' }))),
+          .catch((error) => setErrors(prev => ({ ...prev, youtube: error instanceof Error ? error.message : 'YouTube 影片發生錯誤' }))),
 
         fetchRedditPosts(domainName)
           .then((data) => setRedditPosts(data))
-          .catch((error) => setErrors(prev => ({ ...prev, reddit: error instanceof Error ? error.message : 'An error occurred with Reddit posts' }))),
+          .catch((error) => setErrors(prev => ({ ...prev, reddit: error instanceof Error ? error.message : 'Reddit 貼文發生錯誤' }))),
 
         fetchGitHubUrl(domainName)
           .then((url) => setGithubUrl(url))
-          .catch((error) => setErrors(prev => ({ ...prev, github: error instanceof Error ? error.message : 'An error occurred with GitHub' }))),
+          .catch((error) => setErrors(prev => ({ ...prev, github: error instanceof Error ? error.message : 'GitHub 發生錯誤' }))),
 
         fetchFunding(domainName)
           .then((data) => setFundingData(data))
-          .catch((error) => setErrors(prev => ({ ...prev, funding: error instanceof Error ? error.message : 'An error occurred with funding data' }))),
+          .catch((error) => setErrors(prev => ({ ...prev, funding: error instanceof Error ? error.message : '募資資料發生錯誤' }))),
 
         fetchFinancialReport(domainName)
           .then((data) => setFinancialReport(data))
-          .catch((error) => setErrors(prev => ({ ...prev, financial: error instanceof Error ? error.message : 'An error occurred with financial report' }))),
+          .catch((error) => setErrors(prev => ({ ...prev, financial: error instanceof Error ? error.message : '財務報告發生錯誤' }))),
 
         fetchTikTokProfile(domainName)
           .then((data) => setTiktokData(data))
-          .catch((error) => setErrors(prev => ({ ...prev, tiktok: error instanceof Error ? error.message : 'An error occurred with TikTok profile' }))),
+          .catch((error) => setErrors(prev => ({ ...prev, tiktok: error instanceof Error ? error.message : 'TikTok 個人資料發生錯誤' }))),
 
         fetchWikipedia(domainName)
           .then((data) => setWikipediaData(data))
-          .catch((error) => setErrors(prev => ({ ...prev, wikipedia: error instanceof Error ? error.message : 'An error occurred with Wikipedia data' }))),
+          .catch((error) => setErrors(prev => ({ ...prev, wikipedia: error instanceof Error ? error.message : '維基百科資料發生錯誤' }))),
 
         fetchCrunchbase(domainName)
           .then((data) => setCrunchbaseData(data))
-          .catch((error) => setErrors(prev => ({ ...prev, crunchbase: error instanceof Error ? error.message : 'An error occurred with Crunchbase data' }))),
+          .catch((error) => setErrors(prev => ({ ...prev, crunchbase: error instanceof Error ? error.message : 'Crunchbase 資料發生錯誤' }))),
 
         fetchPitchbook(domainName)
           .then((data) => setPitchbookData(data))
-          .catch((error) => setErrors(prev => ({ ...prev, pitchbook: error instanceof Error ? error.message : 'An error occurred with PitchBook data' }))),
+          .catch((error) => setErrors(prev => ({ ...prev, pitchbook: error instanceof Error ? error.message : 'PitchBook 資料發生錯誤' }))),
 
         fetchTracxn(domainName)
           .then((data) => setTracxnData(data))
-          .catch((error) => setErrors(prev => ({ ...prev, tracxn: error instanceof Error ? error.message : 'An error occurred with Tracxn data' }))),
+          .catch((error) => setErrors(prev => ({ ...prev, tracxn: error instanceof Error ? error.message : 'Tracxn 資料發生錯誤' }))),
 
         fetchFounders(domainName)
           .then((data) => setFounders(data))
-          .catch((error) => setErrors(prev => ({ ...prev, founders: error instanceof Error ? error.message : 'An error occurred with founders' })))
+          .catch((error) => setErrors(prev => ({ ...prev, founders: error instanceof Error ? error.message : '創辦人資料發生錯誤' })))
       ];
 
       await Promise.allSettled(promises);
