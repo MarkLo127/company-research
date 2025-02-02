@@ -109,3 +109,4 @@ yarn dev
 # 必要
 EXA_API_KEY=你的_exa_api_金鑰
 ANTHROPIC_API_KEY=你的_anthropic
+# company-research
