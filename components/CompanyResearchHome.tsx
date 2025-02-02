@@ -886,11 +886,11 @@ export default function CompanyResearcher() {
 
         <div className="flex items-center justify-end gap-2 sm:gap-3 pt-4 opacity-0 animate-fade-up [animation-delay:1000ms]">
           <span className="text-gray-800">Powered by</span>
-          <a 
-            href="https://exa.ai" 
-            target="_blank" 
-            rel="origin"
-            className="hover:opacity-80 transition-opacity"
+          <a
+          href="https://exa.ai" 
+          target="_blank" 
+          rel="noopener origin"
+          className="hover:opacity-80 transition-opacity"
           >
             <img src="/exa_logo.png" alt="Exa Logo" className="h-6 sm:h-7 object-contain" />
           </a>
