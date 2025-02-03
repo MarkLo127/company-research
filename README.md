@@ -65,8 +65,8 @@ CompanyResearcher是一個免費的開源工具，可以幫助您快速深入了
 
 1. 複製專案
 ```bash
-git clone https://github.com/exa-labs/company-researcher.git
-cd company-researcher
+git clone https://github.com/MarkLo127/company-research.git
+cd company-research
 ```
 
 2. 安裝相依套件
