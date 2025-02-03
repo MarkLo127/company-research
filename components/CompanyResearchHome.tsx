@@ -325,14 +325,14 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('無法獲取公司摘要');
+        throw new Error('無法獲取Company摘要');
       }
 
       const data = await response.json();
       setCompanySummary(data.result);
     } catch (error) {
       console.error('Error fetching company summary:', error);
-      setErrors(prev => ({ ...prev, summary: error instanceof Error ? error.message : '公司摘要發生錯誤' }));
+      setErrors(prev => ({ ...prev, summary: error instanceof Error ? error.message : 'Company摘要發生錯誤' }));
     }
   };
 
@@ -351,14 +351,14 @@ export default function CompanyResearcher() {
       });
 
       if (!response.ok) {
-        throw new Error('無法獲取公司地圖');
+        throw new Error('無法獲取Company地圖');
       }
 
       const data = await response.json();
       setCompanyMap(data.result);
     } catch (error) {
       console.error('Error fetching company map:', error);
-      setErrors(prev => ({ ...prev, map: error instanceof Error ? error.message : '公司地圖發生錯誤' }));
+      setErrors(prev => ({ ...prev, map: error instanceof Error ? error.message : 'Company地圖發生錯誤' }));
     }
   };
 
@@ -741,14 +741,14 @@ export default function CompanyResearcher() {
     e.preventDefault();
 
     if (!companyUrl) {
-      setErrors({ form: "請輸入公司網址" });
+      setErrors({ form: "請輸入Company網址" });
       return;
     }
 
     const domainName = extractDomain(companyUrl);
     
     if (!domainName) {
-      setErrors({ form: "請輸入有效的公司網址（'example.com'）" });
+      setErrors({ form: "請輸入有效的Company網址（'example.com'）" });
       return;
     }
 
@@ -784,7 +784,7 @@ export default function CompanyResearcher() {
           if (mainPageData && mainPageData[0]?.summary) {
             await Promise.all([
               fetchCompanyDetails(mainPageData, domainName)
-                .catch((error) => setErrors(prev => ({ ...prev, companyDetails: error instanceof Error ? error.message : '公司詳細資料發生錯誤' }))),
+                .catch((error) => setErrors(prev => ({ ...prev, companyDetails: error instanceof Error ? error.message : 'Company詳細資料發生錯誤' }))),
               fetchCompetitors(mainPageData[0].summary, domainName)
                 .then((data) => setCompetitors(data))
                 .catch((error) => setErrors(prev => ({ ...prev, competitors: error instanceof Error ? error.message : '競爭對手資料發生錯誤' })))
@@ -859,19 +859,19 @@ export default function CompanyResearcher() {
   return (
     <div className="w-full max-w-5xl p-6 z-10 mb-20 mt-6">
       <h1 className="md:text-6xl text-4xl pb-5 font-medium opacity-0 animate-fade-up [animation-delay:200ms]">
-        <span className="text-brand-default">公司</span>
-        研究工具
+        <span className="text-brand-default">Company</span>
+        Researcher
       </h1>
 
       <p className="text-black mb-12 opacity-0 animate-fade-up [animation-delay:400ms]">
-        輸入公司網址以獲取詳細的研究資訊。立即深入了解任何公司。
+        輸入網址以獲取詳細的研究資訊
       </p>
 
       <form onSubmit={handleResearch} className="space-y-6 mb-20">
         <input
           value={companyUrl}
           onChange={(e) => setCompanyUrl(e.target.value)}
-          placeholder="輸入公司網址（例如：example.com）"
+          placeholder="輸入網址（例如：example.com）"
           className="w-full bg-white p-3 border box-border outline-none rounded-sm ring-2 ring-brand-default resize-none opacity-0 animate-fade-up [animation-delay:600ms]"
         />
         <button
@@ -911,7 +911,7 @@ export default function CompanyResearcher() {
           fundingData || crunchbaseData || pitchbookData || tracxnData || 
           wikipediaData) && (
             <div className="flex items-center">
-              <h2 className="text-4xl font-medium">公司概覽</h2>
+              <h2 className="text-4xl font-medium">Company概覽</h2>
             </div>
             )}
 
@@ -1007,7 +1007,7 @@ export default function CompanyResearcher() {
           {(twitterProfileText || youtubeVideos || tiktokData || 
           redditPosts || githubUrl) && (
             <div className="flex items-center">
-              <h2 className="text-4xl font-medium">公司社群</h2>
+              <h2 className="text-4xl font-medium">Company社群</h2>
             </div>
             )}
 

@@ -129,7 +129,7 @@ export default function LinkedInDisplay({ data }: { data: LinkedInData }) {
           <div className="flex items-start gap-3">
             <Users className="w-5 h-5 text-gray-500 mt-0.5" />
             <div>
-              <div className="text-sm font-medium text-gray-900">公司規模</div>
+              <div className="text-sm font-medium text-gray-900">Company規模</div>
               <div className="text-gray-600">{processedData.companySize}</div>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function LinkedInDisplay({ data }: { data: LinkedInData }) {
           <div className="flex items-start gap-3">
             <UserCircle2 className="w-5 h-5 text-gray-500 mt-0.5" />
             <div>
-              <div className="text-sm font-medium text-gray-900">公司類型</div>
+              <div className="text-sm font-medium text-gray-900">Company類型</div>
               <div className="text-gray-600">{processedData.type}</div>
             </div>
           </div>

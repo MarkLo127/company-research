@@ -1,13 +1,13 @@
-# 🔎 公司研究工具
+# 🔎 CompanyResearcher
 ### 由 [Exa.ai](https://exa.ai) 驅動 - AI 應用程式專用的搜尋引擎
 
 ![截圖](https://github.com/MarkLo127/company-research/blob/main/app/opengraph-image.jpg)
 
 <br>
 
-## 🎯 什麼是公司研究工具？
+## 🎯 什麼是CompanyResearcher？
 
-公司研究工具是一個免費的開源工具，可以幫助您快速深入了解任何公司。只需輸入公司的網址，該工具就會從網路上收集全面的資訊，為您提供有關組織、產品、資金、社交媒體影響力等詳細見解。
+CompanyResearcher是一個免費的開源工具，可以幫助您快速深入了解任何Company。只需輸入Company的網址，該工具就會從網路上收集全面的資訊，為您提供有關組織、產品、資金、社交媒體影響力等詳細見解。
 
 <br>
 
@@ -15,11 +15,11 @@
 > 所有數據都是使用 Exa 強大的搜尋 API 獲取。以下每個部分都包含了在 Exa 的測試平台中直接嘗試 API 呼叫的連結。
 
 1. **網站資訊**
-   - 公司網站內容 ([try API](https://dashboard.exa.ai/playground/get-contents?filters=%7B%22ids%22%3A%5B%22https%3A%2F%2Fexa.ai%22%5D%2C%22text%22%3A%22true%22%2C%22summary%22%3Atrue%7D))
+   - Company網站內容 ([try API](https://dashboard.exa.ai/playground/get-contents?filters=%7B%22ids%22%3A%5B%22https%3A%2F%2Fexa.ai%22%5D%2C%22text%22%3A%22true%22%2C%22summary%22%3Atrue%7D))
    - 子頁面（關於我們、常見問題、價格、部落格）([try API](https://dashboard.exa.ai/playground/search?q=exa.ai&c=company&filters=%7B%22type%22%3A%22neural%22%2C%22text%22%3A%22true%22%2C%22numResults%22%3A1%2C%22livecrawl%22%3A%22always%22%2C%22subpages%22%3A10%2C%22subpageTarget%22%3A%5B%22about%22%2C%22pricing%22%2C%22faq%22%2C%22blog%22%5D%2C%22includeDomains%22%3A%5B%22exa.ai%22%5D%7D))
 
 2. **LinkedIn 資料**
-   - 公司檔案 ([try API](https://dashboard.exa.ai/playground/search?q=https%3A%2F%2Fexa.ai%20Linkedin%20profile%3A&filters=%7B%22type%22%3A%22keyword%22%2C%22text%22%3A%22true%22%2C%22numResults%22%3A1%2C%22livecrawl%22%3A%22always%22%7D))
+   - Company檔案 ([try API](https://dashboard.exa.ai/playground/search?q=https%3A%2F%2Fexa.ai%20Linkedin%20profile%3A&filters=%7B%22type%22%3A%22keyword%22%2C%22text%22%3A%22true%22%2C%22numResults%22%3A1%2C%22livecrawl%22%3A%22always%22%7D))
    - 創辦人檔案 ([try API](https://dashboard.exa.ai/playground/search?q=exa.ai%20founder%27s%20Linkedin%20page%3A&filters=%7B%22type%22%3A%22keyword%22%2C%22numResults%22%3A5%2C%22includeDomains%22%3A%5B%22linkedin.com%22%5D%7D))
 
 3. **財務資訊**
